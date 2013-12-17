@@ -10,7 +10,7 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 #If using the sequencer, point SNCSEQ at its top directory:
 SNCSEQ=$(SUPPORT)/seq/2-1-11
 # For serial support
-ASYN=$(SUPPORT)/asyn/4-18
+ASYN=$(SUPPORT)/asyn/4-22
 
 # EPICS_BASE usually appears last so other apps can override stuff:
 #EPICS_BASE=/home/oxygen/MOONEY/epics/base-3.14.12.1

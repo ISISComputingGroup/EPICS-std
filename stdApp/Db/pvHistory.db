@@ -9,7 +9,7 @@ record(compress, "$(P)history$(N)_date") {
   field(ALG, "Circular Buffer")
   field(PINI, "NO")
   field(NSAM, "$(MAXSAMPLES)")
-  field(EGU, "seconds")
+  field(EGU, "s")
   field(FLNK, "$(P)history$(N)")
 }
 

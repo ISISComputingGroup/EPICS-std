@@ -5,7 +5,7 @@ grecord(ao,"$(P)$(S)p2_set_position") {
 	field(DESC,"$(S) positioner 2")
 	field(FLNK,"$(P)$(S)p2_fan.VAL  PP MS")
 	field(PREC,"4")
-	field(EGU,"microns")
+	field(EGU,"um")
 	field(DRVH,"50")
 	field(DRVL,"-50")
 }
@@ -28,7 +28,7 @@ grecord(ao,"$(P)$(S)p1_set_position") {
 	field(PINI,"YES")
 	field(FLNK,"$(P)$(S)p1_fan.VAL  PP MS")
 	field(PREC,"4")
-	field(EGU,"microns")
+	field(EGU,"um")
 	field(DRVH,"50")
 	field(DRVL,"-50")
 }

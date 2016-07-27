@@ -10,6 +10,82 @@
 <BODY LANG="en-US" BGCOLOR="#ffffff" DIR="LTR">
 <H1 ALIGN=CENTER>std Release Notes</H1>
 
+<cr>
+ <h2 align="CENTER">
+	Release 3-4-1 (Nov. 4, 2015)</h2>
+  <ul>
+  <li>pid_parameters.adl: added HOPR and LOPR
+  <li>delayCmd.cpp: added space for trailing null
+  <li>define SYM_IS_TEXT for vxWorks version < 6 in vxcall.cpp  (Thanks to Lewis Muir)
+  </ul>
+
+ <h2 align="CENTER">
+	Release 3-4 (Jan. 13, 2015)</h2>
+  <ul>
+	
+	<li>Added function "vxCall()", so that all built in vxWorks functions can
+		be invoked from the IOC shell.
+		
+  </ul><cr>
+
+
+ <h2 align="CENTER">
+    Release 3-3 (Nov. 10, 2014)</h2>
+  <ul>
+
+	<li>Added function "doAfterIocInit()", so that databases paired with SNL
+		programs can be specified in the same place.  (Thanks to Keenan Lang)
+
+	<li>scalerRecord.c: use "epicsUInt32" instead of "unsigned long" for Sn and
+		PRn fields
+
+	<li>devScalerAsyn.c: Changed pointers from unsigned long to epicsUInt32;
+		changes to avoid compiler warnings
+
+	<li>Added displays for the aSub, compress, and sub records
+	
+	<li>translated .adl files for caQtDM and CSS-BOY
+
+	<li>drvScalerSoft.c: modified to zero scaler-count PVs when scaler is
+		started.
+
+	<li>Added scalerSoftCtrl database and settings file; added softScaler.cmd
+		example of loading soft scaler into ioc.
+
+	<li>Modified 4step.db, replacing hard-wired "4step:" with "$(Q)".  Modified
+		4step_settings.req, replacing "$(Q):" with "$(Q)".
+
+  </ul><cr>
+
+<cr>
+ <h2 align="CENTER">
+    Release 3-2 (Apr. 17, 2013)</h2>
+  <ul>
+
+	<li>The sseq record was moved from the std module to the calc module, along
+		with all of its databases, request files, and display files.
+
+	<li>Added general purpose selector (e.g., for mirror stripe) selector.db,
+		etc.
+
+	<li>misc.db - added two current time PVs, P:iso8601 and P:datetime
+	
+	<li>pvHistory.db - use Soft Timestamp device support, because it's in base
+
+	<li>epid.req - add autosave/restore request file for epid record
+
+	<li>countDownTimer.vdb - New calc engine in base requires ?: expression to
+		have both ? and :
+
+	<li>devTimeOfDay.c - Use epicsTimeToStrftime, instead of to-be-deleted
+		tsStampToText.
+
+	<li>selector.db, selector*.adl - general purpose selector
+	
+	<li>Added display files for CSS-BOY and caQtDM
+
+  </ul><cr>
+
 
  <h2 align="CENTER">
     Release 3-1 (Nov 14, 2011)</h2>

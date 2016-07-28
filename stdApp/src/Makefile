@@ -22,7 +22,6 @@ include $(TOP)/configure/CONFIG
 # xxxRecord.h will be created from xxxRecord.dbd
 
 DBDINC += scalerRecord
-DBDINC += sseqRecord
 DBDINC += epidRecord
 DBDINC += timestampRecord
 
@@ -46,8 +45,6 @@ std_SRCS += epidRecord.c
 std_SRCS += devEpidSoft.c
 std_SRCS += devEpidSoftCallback.c
 std_SRCS += devEpidFast.c
-std_SRCS += sseqRecord.c
-#std_SRCS += devVXStats.c
 
 # timestamp record
 std_SRCS += timestampRecord.c
@@ -58,6 +55,12 @@ std_SRCS += pvHistory.c
 
 # Femto amplifier
 std_SRCS += femto.st
+
+#delayCmd command
+std_SRCS += delayCmd.cpp
+
+# vxCall command
+std_SRCS_vxWorks += vxcall.cpp
 
 # publish this file so it can be included by device support for scaler
 # built in the MCA module
@@ -84,6 +87,7 @@ stdApp_SRCS_vxWorks += -nil-
 stdApp_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 stdApp_LIBS += std seq pv asyn $(EPICS_BASE_IOC_LIBS)
+stdApp_SYS_LIBS_solaris += socket
 
 #===========================
 
@@ -97,3 +101,6 @@ epidRecord$(OBJ):          $(COMMON_DIR)/epidRecord.h
 devEpidSoft$(OBJ):         $(COMMON_DIR)/epidRecord.h
 devEpidSoftCallback$(OBJ): $(COMMON_DIR)/epidRecord.h
 devEpidFast$(OBJ):         $(COMMON_DIR)/epidRecord.h
+scalerRecord$(OBJ):        $(COMMON_DIR)/scalerRecord.h
+devScalerAsyn$(OBJ):       $(COMMON_DIR)/scalerRecord.h
+timestampRecord$(OBJ):     $(COMMON_DIR)/timestampRecord.h

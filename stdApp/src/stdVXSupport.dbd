@@ -1,4 +1,4 @@
-include "stdSupport.dbd"
+#include "stdSupport.dbd"
 
 ################
 # RECORD SUPPORT
@@ -11,3 +11,9 @@ include "stdSupport.dbd"
 ################
 # DRIVER SUPPORT
 ################
+
+################
+# OTHER SUPPORT
+################
+
+registrar(vxcallRegistrar)

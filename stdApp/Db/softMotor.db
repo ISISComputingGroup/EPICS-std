@@ -4,7 +4,6 @@ grecord(motor,"$(P)$(SM)") {
     field(VELO,"100")
     field(VBAS,"25")
     field(ACCL,"0.5")
-    field(OUT,"0")
     field(MRES,"0.01")
     field(ERES,"0.01")
     field(RRES,"1.0")

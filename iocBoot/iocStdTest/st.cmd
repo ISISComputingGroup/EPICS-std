@@ -49,11 +49,11 @@ dbLoadRecords("../../../std/stdApp/Db/misc.db", "P=stdTest:")
 # Femto amplifier
 #dbLoadRecords("../../../std/femto.db","P=stdTest:,H=fem01:,F=seq01:")
 
+# Throttle record
+#dbLoadRecords "../../../std/stdApp/Db/throttle.db", "P=stdTest:,THR=thr1"
+
 # General purpose selector
 dbLoadTemplate("selector.substitutions")
-
-# soft scaler
-< softScaler.cmd
 
 iocInit
 

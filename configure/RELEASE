@@ -9,3 +9,27 @@ SNCSEQ=$(SUPPORT)/seq/master
 
 include $(TOP)/../../../ISIS_CONFIG
 -include $(TOP)/../../../ISIS_CONFIG.$(EPICS_HOST_ARCH)
+SUPPORT=/corvette/home/epics/devel
+
+#If using the sequencer, point SNCSEQ at its top directory:
+SNCSEQ=$(SUPPORT)/seq-2-2-5
+
+# For serial support
+ASYN=$(SUPPORT)/asyn-4-41
+
+# EPICS_BASE usually appears last so other apps can override stuff:
+EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.4
+
+# NOTE: std contains databases that use records defined in the calc, sscan,
+# busy, and motor modules, but it does not have build-time dependencies on those
+# modules.
+
+#Capfast users may need the following definitions
+#CAPFAST_TEMPLATES=
+#SCH2EDIF_PATH=
+
+# These lines allow developers to override these RELEASE settings
+# without having to modify this file directly.
+-include $(TOP)/../RELEASE.local
+-include $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local
+-include $(TOP)/configure/RELEASE.local

@@ -25,3 +25,8 @@
 *.class binary
 *.vi binary
 
+#Which files need CRLF handling
+* text=auto
+*.sh eol=lf
+*.bat eol=crlf
+*.cmd -text

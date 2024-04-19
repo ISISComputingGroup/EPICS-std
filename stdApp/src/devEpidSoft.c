@@ -41,6 +41,8 @@
  *  dT(n)   Time difference between n-1 and n
  */
 
+#include    <math.h>
+
 #include    <alarm.h>
 #include    <dbDefs.h>
 #include    <dbAccess.h>
@@ -142,10 +144,8 @@ static long do_pid(epidRecord *pepid)
              * 2) Don't decrease I if output <= lowLimit
              * 3) Don't change I if feedback is off
              * 4) Limit the integral term to be in the range betweem DRLV and DRVH
-             * 5) If KI is zero then set the sum to DRVL (if KI is positive), or
-             *    DRVH (if KP is negative) to allow easily turning off the 
-             *    integral term for PID tuning.
-             */
+      			 * 5) If KI is zero then set the I term to 0.
+             */  
             di = kp*ki*e*dt;
             if (pepid->fbon) {
                 if (!pepid->fbop) {
@@ -207,7 +207,9 @@ static long do_pid(epidRecord *pepid)
     pepid->dt   = dt;
     pepid->err  = e;
     pepid->cval  = cval;
-    pepid->oval  = oval;
+    if ((pepid->odel == 0) || (fabs(pepid->oval - oval) > pepid->odel)) {
+        pepid->oval  = oval;
+    }
     pepid->p  = p;
     pepid->i  = i;
     pepid->d  = d;
